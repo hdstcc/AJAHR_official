@@ -1,7 +1,7 @@
 <div align="center">
 
 # AJAHR: Amputated Joint Aware 3D Human Mesh Recovery
-<p style="font-size:20px; font-weight:bold; margin-top:10px; margin-bottom:20px;">
+<p style="font-size:40px; font-weight:bold; margin-top:10px; margin-bottom:20px;">
   International Conference on Computer Vision (ICCV 2025)
 </p>
 
