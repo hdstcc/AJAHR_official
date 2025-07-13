@@ -17,3 +17,9 @@ International Conference on Computer Vision (ICCV2025)
 ## 🖼️ Teaser
 
 ![Teaser](./fig/fig1.png)
+
+## Overview
+Code repository for the paper: **AJAHR: Amputated Joint Aware 3D Human Mesh Recovery**  
+The official Code&Datasets will be released shortly -- Stay tuned!
+
+## Key Idea
