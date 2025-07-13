@@ -1,6 +1,6 @@
 # AJAHR: Amputated Joint Aware 3D Human Mesh Recovery
 
-Code repository for the paper: AJAHR: Amputated Joint Aware 3D Human Mesh Recovery Hyunjin Cho, Giyun Choi, Jongwon Choi<br>
+Code repository for the paper: AJAHR: Amputated Joint Aware 3D Human Mesh Recovery [Hyunjin Cho](https://chojinie.github.io/categories/), Giyun Choi, Jongwon Choi<br>
 
 [![arXiv](https://img.shields.io/badge/arXiv-2305.20091-brightgreen.svg)](https://arxiv.org/abs/2305.20091)
 [![website](https://img.shields.io/badge/website-up-blue.svg)](https://chojinie.github.io/project_AJAHR/)
