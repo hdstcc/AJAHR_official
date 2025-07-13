@@ -1,9 +1,9 @@
 <div align="center">
 
 # AJAHR: Amputated Joint Aware 3D Human Mesh Recovery
+## International Conference on Computer Vision
 
-Code repository for the paper: **AJAHR: Amputated Joint Aware 3D Human Mesh Recovery**  
-**[Hyunjin Cho](https://chojinie.github.io/categories/)<sup>\*</sup>**, **Giyun Choi<sup>\*</sup>**, Jongwon Choi<sup>†</sup>
+**[Hyunjin Cho](https://chojinie.github.io/categories/)<sup>\*</sup>**, **Giyun Choi<sup>\*</sup>**, Jongwon Choi<sup>†</sup><br>
 <sup>\*</sup> Equal contribution &nbsp;&nbsp;&nbsp; <sup>†</sup> Corresponding author  
 
 <br/>
@@ -12,10 +12,6 @@ Code repository for the paper: **AJAHR: Amputated Joint Aware 3D Human Mesh Reco
 [![website](https://img.shields.io/badge/website-up-blue.svg)](https://chojinie.github.io/project_AJAHR/)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/chojinie/chojinie.github.io/blob/main/demo.ipynb)
 [![🤗 HuggingFace Spaces](https://img.shields.io/badge/🤗_HuggingFace-Spaces-blue)](https://huggingface.co/spaces/your-space-name)
-
-## 🖼️ Teaser
-
-![Teaser](./fig/fig1.png)
 
 ## 🖼️ Teaser
 
