@@ -12,6 +12,7 @@ International Conference on Computer Vision (ICCV2025)
 [![website](https://img.shields.io/badge/website-up-blue.svg)](https://chojinie.github.io/project_AJAHR/)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/chojinie/chojinie.github.io/blob/main/demo.ipynb)
 [![🤗 HuggingFace Spaces](https://img.shields.io/badge/🤗_HuggingFace-Spaces-blue)](https://huggingface.co/spaces/your-space-name)
+</div>
 
 ## 🖼️ Teaser
 
