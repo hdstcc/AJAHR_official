@@ -35,6 +35,8 @@ Built with real-world and studio-rendered scenes, A3D includes mesh overlays, et
 
 ## Dataset Access
 
+📌 Access Requirement
+
 To ensure that the dataset is used **strictly for academic and research purposes**, interested parties are required to complete this request form. Please provide information regarding your **intended use**, **institutional affiliation**, and any **relevant ongoing projects**. Your request will be reviewed, and further instructions will be provided upon approval.
 
 🔗 **Request Form:** [https://forms.gle/z5QGfXP9PxzSZM9F8](https://forms.gle/z5QGfXP9PxzSZM9F8)
