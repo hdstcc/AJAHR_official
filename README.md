@@ -41,6 +41,35 @@ To ensure that the dataset is used **strictly for academic and research purposes
 
 ---
 
+## Dataset Structure
+
+The A3D / AJAHR dataset follows a unified directory structure.
+
+```plaintext
+AJAHR_Dataset/
+├── COCO_train/
+│   ├── Images/
+│   └── annotation/
+│
+├── MPII/
+│   ├── Images/
+│   └── annotation/
+│
+├── COCO_val/
+│   ├── Images/
+│   └── annotation/ ← Evaluation Set
+│
+└── H36M/
+    ├── annotation/
+    └── Images/
+        ├── S1/
+        ├── S5/
+        ├── S6/
+        ├── S7/
+        ├── S8/
+        ├── S9/
+        └── S11/   ← Evaluation Set
+
 ## Dataset: AJAHR Index & SMPL Mapping
 
 ![SMPL\_Index\_Visualization](./fig/index.png)
@@ -131,7 +160,17 @@ cam_t       → shape: (N, 1, 3),        dtype: float64
 
 The following examples showcase AJAHR-trained mesh regression results on real amputee scenarios. Leveraging the A3D dataset and the amputation-aware joint representation, the framework successfully reconstructs consistent, anatomically valid SMPL meshes even when major limb regions are missing.
 
-![AJAHR\_Results](./fig/total_para.png)
+### A3D Evaluation Dataset Evaluation
+
+![AJAHR\_Results0](/fig/A3D_Eval.png)
+
+### 3DPW (Non-amputee) Dataset Evaluation
+
+![AJAHR\_Results1](/fig/3DPW.png)
+
+### ITW-Amputee Dataset Evalutation
+
+![AJAHR\_Results2](./fig/total_para.png)
 
 > These results demonstrate that AJAHR, trained on A3D, leverages BPAC-Net's amputation region classification to avoid hallucinating non-existent limbs, instead generating structurally valid meshes that adapt to the underlying amputee anatomy. Furthermore, this indicates that the proposed framework effectively reduces the representation gap between synthetic A3D training data and real-world amputee imagery.
 
