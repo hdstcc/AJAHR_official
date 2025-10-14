@@ -27,18 +27,11 @@
 
 ![Key Idea](./fig/A3D.png)
 
-Existing SMPL-based 3D human mesh recovery approaches are fundamentally designed under the assumption that **all joints of the human body are present**. However, in amputated human bodies, **the joint existence itself is altered**, and conventional models tend to either **hallucinate non-existent joints** or enforce incorrect joint priors, resulting in **severe regression instability**.
+Conventional SMPL-based mesh recovery assumes a fully intact human body, causing instability when applied to amputee subjects, as the model attempts to hallucinate non-existent limbs.
 
-To address this limitation, we introduce **A3D (Amputee 3D Dataset)**:
+To overcome this, we introduce A3D (Amputee 3D Dataset) — a dataset that embeds real amputee configurations, applies joint removal with visibility-aware masking, and defines 12 anatomical amputation regions via AJAHR Index, including all child SMPL joints for each region.
 
-* Extends the SMPL shape space by **incorporating real-world amputee body configurations**
-* Applies **joint removal and visibility-aware masking strategies** per anatomical amputation region
-* Utilizes the **AJAHR Index (12 anatomical regions)** to represent each amputated area **along with its hierarchical SMPL joint descendants**
-ecific distribution (P_\text{amputee})** into the training space, rather than relying solely on (P_\text{human}) from COCO/H36M
-
-A3D is constructed with both real-world backgrounds and studio-rendered environments, featuring mesh overlays, skin tone variation across different ethnicities, and diverse clothing textures, making it suitable for robust amputation-aware mesh regression under domain variability.
-
-A3D enables models to **learn the possibility that a joint may not exist**, shifting the problem from simple data augmentation to a **redefinition of structural priors**. This fundamentally differentiates A3D from conventional datasets such as Human3.6M and COCO, which assume intact human anatomy.
+Built with real-world and studio-rendered scenes, A3D includes mesh overlays, ethnicity-aware skin tones, and varied clothing textures, enabling robust amputee-aware mesh regression beyond standard COCO/H36M assumptions.
 
 ## Dataset Access
 
