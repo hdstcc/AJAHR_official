@@ -2,10 +2,7 @@
 
 # AJAHR: Amputated Joint Aware 3D Human Mesh Recovery
 
-**International Conference on Computer Vision (ICCV 2025)**
-
-**Authors:** Hyunjin Cho*, Giyun Choi*, Jongwon Choi†
-*Equal contribution · †Corresponding author*
+#### International Conference on Computer Vision (ICCV 2025)
 
 <p>
   <strong><a href="https://chojinie.github.io/categories/">Hyunjin Cho</a><sup>*</sup></strong>, 
