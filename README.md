@@ -131,7 +131,7 @@ cam_t       → shape: (N, 1, 3),        dtype: float64
 
 The following examples showcase AJAHR-trained mesh regression results on real amputee scenarios. Leveraging the A3D dataset and the amputation-aware joint representation, the framework successfully reconstructs consistent, anatomically valid SMPL meshes even when major limb regions are missing.
 
-![AJAHR\_Results](./fig/para1.png)
+![AJAHR\_Results](./fig/total_para.png)
 
 > These results demonstrate that AJAHR, trained on A3D, leverages BPAC-Net's amputation region classification to avoid hallucinating non-existent limbs, instead generating structurally valid meshes that adapt to the underlying amputee anatomy. Furthermore, this indicates that the proposed framework effectively reduces the representation gap between synthetic A3D training data and real-world amputee imagery.
 
