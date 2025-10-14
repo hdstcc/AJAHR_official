@@ -1,3 +1,5 @@
+<div align="center">
+
 # AJAHR: Amputated Joint Aware 3D Human Mesh Recovery
 
 **International Conference on Computer Vision (ICCV 2025)**
@@ -7,11 +9,14 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2507.20091-brightgreen.svg)](https://arxiv.org/abs/2509.19939) [![project page](https://img.shields.io/badge/website-up-blue.svg)](https://chojinie.github.io/project_AJAHR/)
 
+</div>
+
 ---
+
 
 ## 🖼️ Teaser
 
-![Teaser](./fig/index.png)
+![Teaser](./fig/fig1.png)
 
 ## Key Idea
 
@@ -59,7 +64,7 @@ smpl_index : {
 ### Label Extraction Policy (Automatic from `imgname`)
 
 AJAHR does **not** store explicit class labels inside annotation files. Instead, **each sample's amputation level is inferred directly from its `imgname` pattern**, following the logic below:
-
+    
 ```python
 if 'imgname' in self.data:
     self.labels = []
