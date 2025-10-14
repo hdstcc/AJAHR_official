@@ -21,11 +21,6 @@
 
 ---
 
-
-## 🖼️ Teaser
-
-![Teaser](./fig/fig1.png)
-
 ## Key Idea
 
 ![Key Idea](./fig/A3D.png)
@@ -43,11 +38,17 @@ A3D is constructed with both real-world backgrounds and studio-rendered environm
 
 A3D enables models to **learn the possibility that a joint may not exist**, shifting the problem from simple data augmentation to a **redefinition of structural priors**. This fundamentally differentiates A3D from conventional datasets such as Human3.6M and COCO, which assume intact human anatomy.
 
+## Dataset Access
+
+To ensure that the dataset is used **strictly for academic and research purposes**, interested parties are required to complete this request form. Please provide information regarding your **intended use**, **institutional affiliation**, and any **relevant ongoing projects**. Your request will be reviewed, and further instructions will be provided upon approval.
+
+🔗 **Request Form:** [https://forms.gle/z5QGfXP9PxzSZM9F8](https://forms.gle/z5QGfXP9PxzSZM9F8)
+
+---
+
 ## Dataset: AJAHR Index & SMPL Mapping
 
-: AJAHR Index & SMPL Mapping
-
-![SMPL\_Index\_Visualization](./fig/smpl_index.png)
+![SMPL\_Index\_Visualization](./fig/index.png)
 
 To support amputated-joint aware mesh reconstruction research, we release **AJAHR-Index**, a joint-group annotation protocol aligned with the SMPL kinematic hierarchy.
 
@@ -91,12 +92,6 @@ else:
 * `amp_number ∈ {0 ~ 11}` → matches **AJAHR Index** (see mapping above)
 * `12` is reserved for the **Non-amputee (default) class**
 * Example filename: `subject_S05_amp03_frameXXXX.png → label = 3 (Right Elbow)`
-
-## Dataset Access
-
-To ensure that the dataset is used **strictly for academic and research purposes**, interested parties are required to complete this request form. Please provide information regarding your **intended use**, **institutional affiliation**, and any **relevant ongoing projects**. Your request will be reviewed, and further instructions will be provided upon approval.
-
-🔗 **Request Form:** [https://forms.gle/z5QGfXP9PxzSZM9F8](https://forms.gle/z5QGfXP9PxzSZM9F8)
 
 ---
 
