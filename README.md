@@ -165,11 +165,11 @@ The following examples showcase AJAHR-trained mesh regression results on real am
 
 ### A3D Evaluation Dataset Evaluation
 
-![AJAHR\_Results0](/fig/A3D_Eval.png)
+![AJAHR\_Results0](./fig/A3D_Eval.png)
 
 ### 3DPW (Non-amputee) Dataset Evaluation
 
-![AJAHR\_Results1](/fig/3DPW.png)
+![AJAHR\_Results1](./fig/3DPW.png)
 
 ### ITW-Amputee Dataset Evalutation
 
