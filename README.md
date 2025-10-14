@@ -71,6 +71,7 @@ smpl_index : {
 > **Note:** `ajahr_index` indicates an amputation region. When an index is marked as amputated, **the corresponding region and all of its descendant joint nodes** are treated as missing. `smpl_index` refers to the **actual SMPL pose joint indices** mapped to each anatomical region.
 
 ### Label Extraction Policy (Automatic from `imgname`)
+Following the AJAHR framework design, labels are not manually annotated but are implicitly derived from the file naming convention, ensuring scalability and consistency across amputee and non-amputee datasets.
 
 AJAHR does **not** store explicit class labels inside annotation files. Instead, **each sample's amputation level is inferred directly from its `imgname` pattern**, following the logic below:
     
@@ -91,7 +92,7 @@ else:
 
 * `amp_number ∈ {0 ~ 11}` → matches **AJAHR Index** (see mapping above)
 * `12` is reserved for the **Non-amputee (default) class**
-* Example filename: `subject_S05_amp03_frameXXXX.png → label = 3 (Right Elbow)`
+* Example filename: `amp_3_XXXXXXX.png → label = 3 (Right Elbow)`
 
 ---
 
@@ -130,6 +131,14 @@ smpl_pose   → shape: (N, 1, 23, 3, 3), dtype: float64
 smpl_shape  → shape: (N, 1, 10),       dtype: float64
 cam_t       → shape: (N, 1, 3),        dtype: float64
 ```
+
+## Trained Framework Output Assets
+
+The following examples showcase AJAHR-trained mesh regression results on real amputee scenarios. Leveraging the A3D dataset and the amputation-aware joint representation, the framework successfully reconstructs consistent, anatomically valid SMPL meshes even when major limb regions are missing.
+
+![AJAHR\_Results](./fig/para1.png)
+
+> These results demonstrate that AJAHR, trained on A3D, leverages BPAC-Net's amputation region classification to avoid hallucinating non-existent limbs, instead generating structurally valid meshes that adapt to the underlying amputee anatomy. Furthermore, this indicates that the proposed framework effectively reduces the representation gap between synthetic A3D training data and real-world amputee imagery.
 
 ---
 
