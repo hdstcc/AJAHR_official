@@ -69,6 +69,7 @@ AJAHR_Dataset/
         ├── S8/
         ├── S9/
         └── S11/   ← Evaluation Set
+```
 
 ## Dataset: AJAHR Index & SMPL Mapping
 
