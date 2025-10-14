@@ -7,6 +7,17 @@
 **Authors:** Hyunjin Cho*, Giyun Choi*, Jongwon Choi†
 *Equal contribution · †Corresponding author*
 
+<p>
+  <strong><a href="https://chojinie.github.io/categories/">Hyunjin Cho</a><sup>*</sup></strong>, 
+  <strong>Giyun Choi<sup>*</sup></strong>, 
+  Jongwon Choi<sup>†</sup>
+</p>
+
+<p>
+  <sup>*</sup> Equal contribution &nbsp;&nbsp;&nbsp;
+  <sup>†</sup> Corresponding author
+</p>
+
 [![arXiv](https://img.shields.io/badge/arXiv-2507.20091-brightgreen.svg)](https://arxiv.org/abs/2509.19939) [![project page](https://img.shields.io/badge/website-up-blue.svg)](https://chojinie.github.io/project_AJAHR/)
 
 </div>
