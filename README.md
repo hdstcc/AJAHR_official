@@ -40,11 +40,8 @@ To ensure that the dataset is used <strong>strictly for academic and research pu
 
 🔗 <strong>Request Form:</strong> <a href="https://forms.gle/z5QGfXP9PxzSZM9F8" target="_blank" rel="noopener">https://forms.gle/z5QGfXP9PxzSZM9F8</a>
 
-<!-- Dataset Structure -->
-<details>
-  <summary><strong>🗂️ Dataset Structure</strong></summary>
 
-<br/>
+### Dataset Structure
 
 The A3D dataset follows a unified directory structure.
 
@@ -75,7 +72,7 @@ A3D_Dataset/
 ```
 </details>
 
-## Dataset: AJAHR Index & SMPL Mapping
+### Dataset: AJAHR Index & SMPL Mapping
 
 ![SMPL\_Index\_Visualization](./fig/index.png)
 
@@ -125,7 +122,7 @@ else:
 
 ---
 
-## Dataset Structure: AJAHR Index & SMPL Mapping
+### Data Shape
 
 **COCO / MPII Based Annotations**
 
