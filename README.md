@@ -183,12 +183,13 @@ The following examples showcase AJAHR-trained mesh regression results on real am
 If you find **AJAHR** useful in your research, please consider citing:
 
 ```bibtex
-@misc{cho2025ajahramputatedjointaware,
-      title={AJAHR: Amputated Joint Aware 3D Human Mesh Recovery},
-      author={Hyunjin Cho and Giyun Choi and Jongwon Choi},
-      year={2025},
-      eprint={2509.19939},
-      archivePrefix={arXiv},
-      primaryClass={cs.GR},
-      url={https://arxiv.org/abs/2509.19939},
+@inproceedings{ajahr25,
+  title     = {AJAHR: Amputated Joint Aware 3D Human Mesh Recovery},
+  author    = {Cho, Hyunjin and Choi, Giyun and Choi, Jongwon},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2025},
+  address   = {Honolulu, HI, USA},
+  month     = {October},
+  publisher = {IEEE},
+  note      = {to appear; arXiv:2509.19939}
 }
