@@ -39,9 +39,7 @@ Built with real-world and studio-rendered scenes, A3D includes mesh overlays, et
 To ensure that the dataset is used <strong>strictly for academic and research purposes</strong>, interested parties are required to complete this request form. Please provide information regarding your <strong>intended use</strong>, <strong>institutional affiliation</strong>, and any <strong>relevant ongoing projects</strong>. Your request will be reviewed, and further instructions will be provided upon approval. 
 
 🔗 <strong>Request Form:</strong> <a href="https://forms.gle/z5QGfXP9PxzSZM9F8" target="_blank" rel="noopener">https://forms.gle/z5QGfXP9PxzSZM9F8</a>
-<p><em>Note.</em> In addition to the assets we release, you can also build your <strong>own amputee-aware dataset</strong> by following the procedure described in our paper. Our pipeline runs an <strong>off-the-shelf human pose/mesh model</strong> on any image that contains a person and uses the predictions as <strong>pseudo ground truth</strong> to construct amputee datasets and labels. We recommend this option when you need domain-specific data (e.g., clinical or in-the-wild). For step-by-step details, please refer to the paper.</p>
-
-
+> **Note:** In addition to the assets we release, you can also build your <strong>own amputee-aware dataset</strong> by following the procedure described in our paper. Our pipeline runs an <strong>off-the-shelf human pose/mesh model</strong> on any image that contains a person and uses the predictions as <strong>pseudo ground truth</strong> to construct amputee datasets and labels. We recommend this option when you need domain-specific data (e.g., clinical or in-the-wild). For step-by-step details, please refer to the paper.
 
 ### Dataset Structure
 
