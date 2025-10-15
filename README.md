@@ -35,7 +35,7 @@ Built with real-world and studio-rendered scenes, A3D includes mesh overlays, et
 
 <!-- Dataset Access -->
 <details>
-  <summary><strong>📥 Dataset Access</strong></summary>
+  <summary><strong><h2>📥 Dataset Preparation</strong></h2></summary>
 
 <br/>
 
