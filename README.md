@@ -45,7 +45,7 @@ To ensure that the dataset is used **strictly for academic and research purposes
 
 ## Dataset Structure
 
-The A3D / AJAHR dataset follows a unified directory structure.
+The A3D dataset follows a unified directory structure.
 
 ```plaintext
 AJAHR_Dataset/
