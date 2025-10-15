@@ -33,40 +33,24 @@ To overcome this, we introduce A3D (Amputee 3D Dataset) — a dataset that embed
 
 Built with real-world and studio-rendered scenes, A3D includes mesh overlays, ethnicity-aware skin tones, and varied clothing textures, enabling robust amputee-aware mesh regression beyond standard COCO/H36M assumptions.
 
-<!-- Dataset Preparation (parent accordion) -->
-<details open>
-  <summary><h2>📥 Dataset Preparation</h2></summary>
+<!-- Dataset Preparation -->
+<details>
+  <summary><strong><h2>📥 Dataset Preparation</strong></h2></summary>
+To ensure that the dataset is used <strong>strictly for academic and research purposes</strong>, interested parties are required to complete this request form. Please provide information regarding your <strong>intended use</strong>, <strong>institutional affiliation</strong>, and any <strong>relevant ongoing projects</strong>. Your request will be reviewed, and further instructions will be provided upon approval.
 
-  <br/>
+🔗 <strong>Request Form:</strong> <a href="https://forms.gle/z5QGfXP9PxzSZM9F8" target="_blank" rel="noopener">https://forms.gle/z5QGfXP9PxzSZM9F8</a>
+</details>
 
-  <!-- Quick TOC -->
-  <p><strong>Contents</strong></p>
-  <ul>
-    <li><a href="#ds-structure">Dataset Structure</a></li>
-    <li><a href="#ds-ajahr">Dataset: AJAHR Index &amp; SMPL Mapping</a></li>
-    <li><a href="#ds-label">Label Extraction Policy</a></li>
-    <li><a href="#ds-annotations">Dataset Structure: AJAHR Index &amp; SMPL Mapping (Annotation Shapes)</a></li>
-  </ul>
+<!-- Dataset Structure -->
+<details>
+  <summary><strong>🗂️ Dataset Structure</strong></summary>
 
-  <!-- Access Requirement -->
-  <h3 id="ds-access">Access Requirement</h3>
-  <p>
-    To ensure that the dataset is used <strong>strictly for academic and research purposes</strong>, interested parties are required to complete this request form. Please provide information regarding your <strong>intended use</strong>, <strong>institutional affiliation</strong>, and any <strong>relevant ongoing projects</strong>. Your request will be reviewed, and further instructions will be provided upon approval.
-  </p>
-  <p>
-    🔗 <strong>Request Form:</strong>
-    <a href="https://forms.gle/z5QGfXP9PxzSZM9F8" target="_blank" rel="noopener">https://forms.gle/z5QGfXP9PxzSZM9F8</a>
-  </p>
+<br/>
 
-  <hr/>
+The A3D dataset follows a unified directory structure.
 
-  <!-- 1) Dataset Structure -->
-  <details>
-    <summary><h3 id="ds-structure">🗂️ Dataset Structure</h3></summary>
-    <br/>
-    <p>The A3D dataset follows a unified directory structure.</p>
-
-    <pre><code>A3D_Dataset/
+```plaintext
+A3D_Dataset/
 ├── COCO_train/
 │   ├── Images/
 │   └── annotation/
@@ -89,21 +73,17 @@ Built with real-world and studio-rendered scenes, A3D includes mesh overlays, et
         ├── S8/
         ├── S9/
         └── S11/   ← Evaluation Set
-</code></pre>
-  </details>
+```
+</details>
 
-  <hr/>
+## Dataset: AJAHR Index & SMPL Mapping
 
-  <!-- 2) Dataset: AJAHR Index & SMPL Mapping -->
-  <details>
-    <summary><h3 id="ds-ajahr">🧩 Dataset: AJAHR Index &amp; SMPL Mapping</h3></summary>
-    <br/>
+![SMPL\_Index\_Visualization](./fig/index.png)
 
-    <p><img alt="SMPL_Index_Visualization" src="./fig/index.png"></p>
+To support amputated-joint aware mesh reconstruction research, we release **AJAHR-Index**, a joint-group annotation protocol aligned with the SMPL kinematic hierarchy.
 
-    <p>To support amputated-joint aware mesh reconstruction research, we release <strong>AJAHR-Index</strong>, a joint-group annotation protocol aligned with the SMPL kinematic hierarchy.</p>
-
-    <pre><code>ajahr_index : {
+```
+ajahr_index : {
     0 : Right Hand, 1 : Right Elbow, 2 : Right Shoulder,
     3 : Left Hand, 4 : Left Elbow, 5 : Left Shoulder,
     6 : Left Foot, 7 : Left Knee, 8 : Left Hip,
@@ -116,29 +96,17 @@ smpl_index : {
     7, 10 : Left Foot,        4, 7, 10 : Left Knee,          1, 4, 7, 10 : Left Hip,
     8, 11 : Right Foot,       5, 8, 11 : Right Knee,         2, 5, 8, 11 : Right Hip
 }
-</code></pre>
+```
 
-    <blockquote>
-      <strong>Note:</strong> <code>ajahr_index</code> indicates an amputation region. When an index is marked as amputated, <strong>the corresponding region and all of its descendant joint nodes</strong> are treated as missing. <code>smpl_index</code> refers to the <strong>actual SMPL pose joint indices</strong> mapped to each anatomical region.
-    </blockquote>
+> **Note:** `ajahr_index` indicates an amputation region. When an index is marked as amputated, **the corresponding region and all of its descendant joint nodes** are treated as missing. `smpl_index` refers to the **actual SMPL pose joint indices** mapped to each anatomical region.
 
-  </details>
+### Label Extraction Policy (Automatic from `imgname`)
+Following the AJAHR framework design, labels are not manually annotated but are implicitly derived from the file naming convention, ensuring scalability and consistency across amputee and non-amputee datasets.
 
-  <hr/>
-
-  <!-- 3) Label Extraction Policy -->
-  <details>
-    <summary><h3 id="ds-label">🏷️ Label Extraction Policy (Automatic from <code>imgname</code>)</h3></summary>
-    <br/>
-
-    <p>
-      Following the AJAHR framework design, labels are not manually annotated but are implicitly derived from the file naming convention, ensuring scalability and consistency across amputee and non-amputee datasets.
-    </p>
-    <p>
-      AJAHR does <strong>not</strong> store explicit class labels inside annotation files. Instead, <strong>each sample's amputation level is inferred directly from its <code>imgname</code> pattern</strong>, following the logic below:
-    </p>
-
-    <pre><code>if 'imgname' in self.data:
+AJAHR does **not** store explicit class labels inside annotation files. Instead, **each sample's amputation level is inferred directly from its `imgname` pattern**, following the logic below:
+    
+```python
+if 'imgname' in self.data:
     self.labels = []
     for file_name in self.imgname:
         amp_number = extract_amp_number(file_name)
@@ -148,28 +116,22 @@ smpl_index : {
             self.labels.append(12)
     self.labels = np.array(self.labels)
 else:
-    # for non-amputee datasets
+    #for non-amputee datasets
     self.labels = np.full((self.scale.shape[0],), 12)
-</code></pre>
+```
 
-    <ul>
-      <li><code>amp_number ∈ {0 ~ 11}</code> → matches <strong>AJAHR Index</strong></li>
-      <li><code>12</code> is reserved for the <strong>Non-amputee (default)</strong> class</li>
-      <li>Example filename: <code>amp_3_XXXXXXX.png → label = 3 (Right Elbow)</code></li>
-    </ul>
+* `amp_number ∈ {0 ~ 11}` → matches **AJAHR Index** (see mapping above)
+* `12` is reserved for the **Non-amputee (default) class**
+* Example filename: `amp_3_XXXXXXX.png → label = 3 (Right Elbow)`
 
-  </details>
+---
 
-  <hr/>
+## Dataset Structure: AJAHR Index & SMPL Mapping
 
-  <!-- 4) Dataset Structure: Annotation Shapes -->
-  <details>
-    <summary><h3 id="ds-annotations">📐 Dataset Structure: AJAHR Index &amp; SMPL Mapping (Annotation Shapes)</h3></summary>
-    <br/>
+**COCO / MPII Based Annotations**
 
-    <p><strong>COCO / MPII Based Annotations</strong></p>
-
-    <pre><code>center               → shape: (N, 1, 2),  dtype: float64
+```
+center               → shape: (N, 1, 2),  dtype: float64
 scale                → shape: (N, 1),     dtype: float64
 imgname              → shape: (N,),       dtype: object
 global_orient        → shape: (N, 1, 3, 3), dtype: float32
@@ -183,25 +145,22 @@ body_keypoints_3d    → shape: (N, 25, 4), dtype: float64  # indices 0~24 = bod
 extra_keypoints_3d   → shape: (N, 19, 4), dtype: float64  # indices 25~43 = extra
 body_opt_3d_joints   → shape: (N, 25, 1), dtype: float64
 extra_opt_3d_joints  → shape: (N, 19, 1), dtype: float64
-</code></pre>
+```
 
-    <p><strong>H36M Based Annotations</strong></p>
+**H36M Based Annotations**
 
-    <pre><code>imgname       → shape: (N,),             dtype: &lt;U44&gt;
-scale         → shape: (N, 1),           dtype: float64
-center        → shape: (N, 1, 2),        dtype: float64
-ajahr_conf    → shape: (N, 12),          dtype: int64
-global_orient → shape: (N, 1, 1, 3, 3),  dtype: float64
-gt_2d_kpts    → shape: (N, 1, 44, 3),    dtype: float64  # 0~24 body, 25~43 extra
-gt_3d_kpts    → shape: (N, 1, 44, 5),    dtype: float64  # 0~24 body, 25~43 extra
-smpl_pose     → shape: (N, 1, 23, 3, 3), dtype: float64
-smpl_shape    → shape: (N, 1, 10),       dtype: float64
-cam_t         → shape: (N, 1, 3),        dtype: float64
-</code></pre>
-
-  </details>
-
-</details>
+```
+imgname     → shape: (N,),             dtype: <U44>
+scale       → shape: (N, 1),           dtype: float64
+center      → shape: (N, 1, 2),        dtype: float64
+ajahr_conf  → shape: (N, 12),          dtype: int64
+global_orient → shape: (N, 1, 1, 3, 3), dtype: float64
+gt_2d_kpts  → shape: (N, 1, 44, 3),    dtype: float64  # 0~24 body, 25~43 extra
+gt_3d_kpts  → shape: (N, 1, 44, 5),    dtype: float64  # 0~24 body, 25~43 extra
+smpl_pose   → shape: (N, 1, 23, 3, 3), dtype: float64
+smpl_shape  → shape: (N, 1, 10),       dtype: float64
+cam_t       → shape: (N, 1, 3),        dtype: float64
+```
 
 ## Trained Framework Output Assets
 
