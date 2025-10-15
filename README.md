@@ -73,9 +73,10 @@ A3D_Dataset/
 
 ### Dataset: AJAHR Index & SMPL Mapping
 
-![SMPL\_Index\_Visualization](./fig/index.png)
+![SMPL_Index_Visualization](./fig/index.png)
 
-To support amputated-joint aware mesh reconstruction research, we release **AJAHR-Index**, a joint-group annotation protocol aligned with the SMPL kinematic hierarchy.
+To support amputated-joint–aware mesh reconstruction, we introduce **AJAHR-Index** — a 12-class annotation scheme that partitions **anatomical amputation regions** and aligns them with the SMPL kinematic hierarchy.  
+**AJAHR-Index is used at data generation time:** when a region index is set (e.g., “Right Hand”), the pipeline renders the target limb as **amputated** (via visibility-aware masking and mesh overlay), and all labels are produced accordingly. This index is not just a tag; it **controls how images/labels are synthesized** for amputee cases.
 
 ```
 ajahr_index : {
@@ -84,7 +85,9 @@ ajahr_index : {
     6 : Left Foot, 7 : Left Knee, 8 : Left Hip,
     9 : Right Foot, 10: Right Knee, 11: Right Hip
 }
-
+```
+In parallel, each AJAHR region is **mapped to SMPL joint indices** that cover the region and its descendants in the kinematic tree:
+```
 smpl_index : { 
     21, 23 : Right Hand,      19, 21, 23 : Right Elbow,      17, 19, 21, 23 : Right Shoulder,
     20, 22 : Left Hand,       18, 20, 22: Left Elbow,        16, 18, 20, 22 : Left Shoulder,
@@ -92,8 +95,13 @@ smpl_index : {
     8, 11 : Right Foot,       5, 8, 11 : Right Knee,         2, 5, 8, 11 : Right Hip
 }
 ```
+<!-- > **Note:** `ajahr_index` indicates an amputation region. When an index is marked as amputated, **the corresponding region and all of its descendant joint nodes** are treated as missing. `smpl_index` refers to the **actual SMPL pose joint indices** mapped to each anatomical region. -->
+> **How the mapping is used (example).**  
+> If `ajahr_index = 0` (**Right Hand**), we treat SMPL joints **21 and 23** (right-hand chain) as **absent** in optimization/inference (e.g., set to **zero pose** / masked from loss and visibility), and we synthesize images to **visually remove** that limb.  
+> More generally, when a region is flagged as amputated, **the region and all of its descendant SMPL joints** are excluded from supervision (and optionally zero-posed / masked), ensuring the model does not hallucinate non-existent parts.
 
-> **Note:** `ajahr_index` indicates an amputation region. When an index is marked as amputated, **the corresponding region and all of its descendant joint nodes** are treated as missing. `smpl_index` refers to the **actual SMPL pose joint indices** mapped to each anatomical region.
+For full implementation details (masking, loss masking, supervision rules, and rendering pipeline), **please refer to the paper**.
+
 
 ### Label Extraction Policy (Automatic from `imgname`)
 Following the AJAHR framework design, labels are not manually annotated but are implicitly derived from the file naming convention, ensuring scalability and consistency across amputee and non-amputee datasets.
