@@ -70,7 +70,6 @@ A3D_Dataset/
         ├── S9/
         └── S11/   ← Evaluation Set
 ```
-</details>
 
 ### Dataset: AJAHR Index & SMPL Mapping
 
