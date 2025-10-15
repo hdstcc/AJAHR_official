@@ -9,7 +9,7 @@
 <p>
   <strong><a href="https://chojinie.github.io/categories/">Hyunjin Cho</a><sup>*</sup></strong>, 
   <strong>Giyun Choi<sup>*</sup></strong>, 
-  Jongwon Choi<sup>†</sup>
+  <a href="https://www.vilab.cau.ac.kr/">Jongwon Choi</a><sup>†</sup>
 </p>
 
 <p>
@@ -33,17 +33,27 @@ To overcome this, we introduce A3D (Amputee 3D Dataset) — a dataset that embed
 
 Built with real-world and studio-rendered scenes, A3D includes mesh overlays, ethnicity-aware skin tones, and varied clothing textures, enabling robust amputee-aware mesh regression beyond standard COCO/H36M assumptions.
 
-## Dataset Access
+<!-- Dataset Access -->
+<details>
+  <summary><strong>📥 Dataset Access</strong></summary>
+
+<br/>
 
 ### 📌 Access Requirement
 
-To ensure that the dataset is used **strictly for academic and research purposes**, interested parties are required to complete this request form. Please provide information regarding your **intended use**, **institutional affiliation**, and any **relevant ongoing projects**. Your request will be reviewed, and further instructions will be provided upon approval.
+To ensure that the dataset is used <strong>strictly for academic and research purposes</strong>, interested parties are required to complete this request form. Please provide information regarding your <strong>intended use</strong>, <strong>institutional affiliation</strong>, and any <strong>relevant ongoing projects</strong>. Your request will be reviewed, and further instructions will be provided upon approval.
 
-🔗 **Request Form:** [https://forms.gle/z5QGfXP9PxzSZM9F8](https://forms.gle/z5QGfXP9PxzSZM9F8)
+🔗 <strong>Request Form:</strong> <a href="https://forms.gle/z5QGfXP9PxzSZM9F8" target="_blank" rel="noopener">https://forms.gle/z5QGfXP9PxzSZM9F8</a>
+
+</details>
 
 ---
 
-## Dataset Structure
+<!-- Dataset Structure -->
+<details>
+  <summary><strong>🗂️ Dataset Structure</strong></summary>
+
+<br/>
 
 The A3D dataset follows a unified directory structure.
 
@@ -72,6 +82,7 @@ A3D_Dataset/
         ├── S9/
         └── S11/   ← Evaluation Set
 ```
+</details>
 
 ## Dataset: AJAHR Index & SMPL Mapping
 
