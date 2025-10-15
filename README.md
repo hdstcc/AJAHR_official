@@ -48,7 +48,7 @@ To ensure that the dataset is used **strictly for academic and research purposes
 The A3D dataset follows a unified directory structure.
 
 ```plaintext
-AJAHR_Dataset/
+A3D_Dataset/
 ├── COCO_train/
 │   ├── Images/
 │   └── annotation/
