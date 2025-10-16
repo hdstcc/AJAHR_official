@@ -184,6 +184,9 @@ The following examples showcase AJAHR-trained mesh regression results on real am
 
 > These results demonstrate that AJAHR, trained on A3D, leverages BPAC-Net's amputation region classification to avoid hallucinating non-existent limbs, instead generating structurally valid meshes that adapt to the underlying amputee anatomy. Furthermore, this indicates that the proposed framework effectively reduces the representation gap between synthetic A3D training data and real-world amputee imagery.
 
+### Demo
+
+> The demo and the remaining code are coming soon—I’ll share them as I get them organized.
 ---
 
 ## 📚 Citation
