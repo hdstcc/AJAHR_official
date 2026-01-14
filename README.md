@@ -33,10 +33,16 @@ To overcome this, we introduce A3D (Amputee 3D Dataset) — a dataset that embed
 
 Built with real-world and studio-rendered scenes, A3D includes mesh overlays, ethnicity-aware skin tones, and varied clothing textures, enabling robust amputee-aware mesh regression beyond standard COCO/H36M assumptions.
 
-🔧 Setup and Installation<
+<!-- ========================= -->
+<!-- 🔧 Setup and Installation -->
+<!-- ========================= -->
+<details open>
+  <summary><strong><h2>🔧 Setup and Installation</h2></strong></summary>
 
-The following section describes the verified environment setup used for reproducing the AJAHR framework.
-All instructions are tested with Python 3.10, PyTorch 2.1.0, and CUDA 11.8.
+The following section describes the verified environment setup used for reproducing the AJAHR framework.  
+All instructions are tested with **Python 3.10**, **PyTorch 2.1.0**, and **CUDA 11.8**.
+
+---
 
 1. Clone the Repository
 
@@ -146,8 +152,15 @@ pip install --no-deps --force-reinstall PyOpenGL==3.1.10 PyOpenGL_accelerate==3.
 pip install --no-deps pyrender==0.1.45
 ```
 
-📥 Running AJAHR Demo on Images<
+<!-- ========================= --> 
+<!-- 📥 Running AJAHR Demo --> 
+<!-- ========================= --> 
+<details>
+  <summary><strong><h2>📥 Running AJAHR Demo on Images</h2></strong></summary>
+
 This demo runs AJAHR on a folder of images and produces amputation-aware SMPL mesh reconstructions.
+
+---
 
 ```bash
 python ajahr/demo.py \
